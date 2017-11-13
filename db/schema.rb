@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113160202) do
+ActiveRecord::Schema.define(version: 20171113164737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "spaceship_id"
+    t.bigint "user_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "status"
+    t.integer "total_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spaceship_id"], name: "index_bookings_on_spaceship_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "spaceships", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.integer "price"
+    t.text "description"
+    t.bigint "user_id"
+    t.integer "speed"
+    t.string "weaponry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_spaceships_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +54,13 @@ ActiveRecord::Schema.define(version: 20171113160202) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "spaceships"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "spaceships", "users"
 end
