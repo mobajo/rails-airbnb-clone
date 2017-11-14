@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  resources :users do 
+  resources :spaceships, only: [ :new, :create, :index ] 
+  end
+
+  resources :spaceships, only: [ :show, :edit, :update, :destroy ]
+
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
