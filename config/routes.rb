@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
 
   resources :users do 
+  resources :bookings, only: [ :index, :show, :new, :create, :destroy]
+  end
+  
+  resources :spaceships do 
+  resources :bookings, only: [ :index, :show, :new, :create, :destroy]
+  end
+  
+
+  resources :users do 
   resources :spaceships, only: [ :new, :create, :index ] 
   end
 
