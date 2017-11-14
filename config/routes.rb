@@ -1,19 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :users do 
-  resources :bookings, only: [ :index, :show, :new, :create, :destroy]
-  end
-  
-  resources :spaceships do 
-  resources :bookings, only: [ :index, :show, :new, :create, :destroy]
-  end
-  
+  get    "dashboard", to: "spaceships#dashboard"
 
-  resources :users do 
-  resources :spaceships, only: [ :new, :create, :index ] 
-  end
-
-  resources :spaceships, only: [ :show, :edit, :update, :destroy ]
+  resources :users
+  resources :spaceships
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

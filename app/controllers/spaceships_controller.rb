@@ -42,6 +42,11 @@ class SpaceshipsController < ApplicationController
     redirect_to user_spaceships_path(@spaceship)
   end
 
+  def dashboard
+    @spaceships = current_user.spaceships
+  end
+
+
   private
 
   def spaceship_params
