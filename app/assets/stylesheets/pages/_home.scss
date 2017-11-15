@@ -10,6 +10,14 @@ h1 {
   padding-bottom: 25px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 body {
   color: black;
 }

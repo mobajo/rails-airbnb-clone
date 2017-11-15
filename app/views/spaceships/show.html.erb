@@ -2,15 +2,19 @@
   <h1><%= @spaceship.name %></h1>
 
   <div class="row">
-    <div class="col-sm-4">
-      <p>Address:</p>
-      <p><%= @spaceship.address %></p>
-      <p>Price: <%= @spaceship.price %> $</p>
-      <p>Description: <%= @spaceship.description %></p>
-      <p>Speed: <%= @spaceship.speed %></p>
-      <p>weaponry: <%= @spaceship.weaponry %></p>
-      <p>Owner: <%= @spaceship.user.first_name %> <%= @spaceship.user.last_name %></p>
+    <div class="col-xs-4 col-xs-offset-2">
+      <h4>Info</h4>
+      <p><strong>Address:</strong> <%= @spaceship.address %></p>
+      <p><strong>Description:</strong></p>
+      <p><strong>Speed:</strong> <%= @spaceship.speed %></p>
+      <p><strong>Weaponry: </strong><%= @spaceship.weaponry %></p>
+      <h4>Description</h4>
+      <p><%= @spaceship.description %></p>
+      <p><strong>Price:</strong> <%= @spaceship.price %> $</p>
+
       <div>
+      <h4>Owner:</h4> 
+      <%= @spaceship.user.first_name %> <%= @spaceship.user.last_name %></p>
 
         <% if (@user == @spaceship.user) %>
         <%= link_to "Edit Spaceship", edit_spaceship_path(@spaceship) %> |

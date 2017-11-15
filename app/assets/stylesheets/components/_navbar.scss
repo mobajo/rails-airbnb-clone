@@ -42,9 +42,8 @@
   font-size: 18px;
 }
 .navbar-wagon-link:hover {
-  color: #brand-info;
-  opacity: 0.5;
-  text-decoration: none;
+  color: $brand-info;
+  text-decoration: underline;
 }
 
 /* Dropdown menu */
