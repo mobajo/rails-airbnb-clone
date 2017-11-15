@@ -1,12 +1,20 @@
-<h1>AerospaceBnb</h1>
-<p class="text-center">Find your next spaceship with warp speed!</p>
-<p class="text-center">
-  <%= link_to "See all Spaceships for rent", spaceships_path, class: "btn btn-primary" %>
-  <%= link_to "Go to my Dashboard", dashboard_path, class: "btn btn-primary" %>
-</p>
-<p></p>
-<div class="text-center">
-  <%= cl_image_tag("kedmhvo9dekuwnpaxeyz",
-  width: 768,height: 433, crop: :fill) %>
+<div class="banner" style="background-image: url(<%= image_path 'banner2.jpg' %>);">
+	<div class="banner-content">
+		<h1>AerospaceBnb</h1>
+		<p>Find your next spaceship with warp speed!</p>
+		<div class="main-search-field1">
+			<form class="search-form">
+				<input type="text">
+			</form>
+		</div>
+		<div class="main-search-field2">
+			<%= link_to "Search", spaceships_path, class: "btn btn-primary" %>
+		</div>
+	<!--	<p class="text-center">
+			<%= link_to "See all Spaceships for rent", spaceships_path, class: "btn btn-primary" %>
+			<%= link_to "Go to my Dashboard", dashboard_path, class: "btn btn-primary" %>
+		</p> -->
+	</div>
 </div>
+
 
