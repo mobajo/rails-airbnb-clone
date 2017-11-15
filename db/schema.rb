@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113164737) do
+ActiveRecord::Schema.define(version: 20171115095730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string "attachinariable_type"
+    t.bigint "attachinariable_id"
+    t.string "scope"
+    t.string "public_id"
+    t.string "version"
+    t.integer "width"
+    t.integer "height"
+    t.string "format"
+    t.string "resource_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attachinariable_id"], name: "index_attachinary_files_on_attachinariable_id"
+    t.index ["attachinariable_type", "attachinariable_id"], name: "by_scoped_parent"
+    t.index ["attachinariable_type"], name: "index_attachinary_files_on_attachinariable_type"
+    t.index ["scope"], name: "index_attachinary_files_on_scope"
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "spaceship_id"
@@ -38,6 +56,8 @@ ActiveRecord::Schema.define(version: 20171113164737) do
     t.string "weaponry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_spaceships_on_user_id"
   end
 
@@ -56,6 +76,11 @@ ActiveRecord::Schema.define(version: 20171113164737) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "provider"
+    t.string "uid"
+    t.string "facebook_picture_url"
+    t.string "token"
+    t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
