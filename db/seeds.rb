@@ -110,10 +110,10 @@ urls = [
 spaceship1 = Spaceship.new(
   user: User.first,
   name: "Death Star",
-  address: "Ahornsgade 15, Copenhagen N, Denmark",
+  address: "Ahornsgade, Copenhagen",
   price: 1000,
-  description: "This is the station wagon of spaceships. Plenty of room for the entire family",
-  speed: "Slow",
+  description: "This is the station wagon of spaceships. Plenty of room for the entire family, but have in mind that it can be vulnerable to intruders.",
+  speed: "Static",
   weaponry: "Superlaser/Ultimate Weapon"
   )
 spaceship1.save
@@ -144,7 +144,7 @@ spaceship3 = Spaceship.new(
   name: "Spaceballs Winnebago",
   address: "Allerød, Denmark",
   price: 100,
-  description: "This is the for the easy going spaceship enthusiast. For when you don't care where you are going, because it is all about the journey",
+  description: "This is the for the easy going spaceship enthusiast. For when you don't care where you are going, because it is more about the journey",
   speed: "40 km/h",
   weaponry: "Diesel smoke"
   )
@@ -160,7 +160,7 @@ spaceship4 = Spaceship.new(
   name: "Space Station V",
   address: "Hollywood, California, USA",
   price: 700,
-  description: "This is the spaceship for the interior designminded users. If you care more about going round in circles and sitting comfortably with a great view of Planet Earth",
+  description: "This is the spaceship for the interior design minded traveller. If you care more about going round in circles and sitting comfortably with a great view of Planet Earth",
   speed: "0 km/h",
   weaponry: "None"
   )
@@ -174,9 +174,9 @@ urls = [
 spaceship5 = Spaceship.new(
   user: User.order("RANDOM()").first,
   name: "Apollo Saturn V",
-  address: "Cape Canaveral, Florida, USA",
+  address: "Titusville, FL 32899",
   price: 400,
-  description: "This is tried and tested favorite will get the job done on time. For when you want to get there and secure the best spot for your outer-space picnic before your rival gets there",
+  description: "This is tried and tested favorite will get the job done on time. For when you want to get there and secure the best spot for your outer-space picnic before your rival gets there first.",
   speed: "2 755.55456 m/s",
   weaponry: "Buzz"
   )
@@ -192,7 +192,7 @@ spaceship6 = Spaceship.new(
   name: "Starbug 1",
   address: "Valby, Copenhagen, Denmark",
   price: 100,
-  description: "Crappy green spaceship. Totally unreliable and unclean. Price can negotiated",
+  description: "Crappy green spaceship. Totally unreliable and unclean. Price can be negotiated",
   speed: "42 km/h",
   weaponry: "Nope"
   )
