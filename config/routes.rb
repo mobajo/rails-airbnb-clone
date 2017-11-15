@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   get    "dashboard", to: "spaceships#dashboard"
 
-  resources :users
   resources :spaceships
 
   devise_for :users,
