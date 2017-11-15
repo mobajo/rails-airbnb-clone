@@ -1,7 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= link_to "See all Spaceships for rent", spaceships_path %>
-<%= link_to "Go to my Dashboard", dashboard_path %>
-
+<h1>AerospaceBnb</h1>
+<p class="text-center">Find your next spaceship with warp speed!</p>
+<p class="text-center">
+  <%= link_to "See all Spaceships for rent", spaceships_path, class: "btn btn-primary" %>
+  <%= link_to "Go to my Dashboard", dashboard_path, class: "btn btn-primary" %>
+</p>
+<p></p>
+<div class="text-center">
+  <%= cl_image_tag("kedmhvo9dekuwnpaxeyz",
+  width: 768,height: 433, crop: :fill) %>
+</div>
 

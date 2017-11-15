@@ -1,17 +1,30 @@
 <div class="container">
   <h1><%= @spaceship.name %></h1>
-  <% @spaceship.photos.each do |photo| %>
-    <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-  <% end %>
-  <h2>Address | <%= @spaceship.address %></h2>
-  <h2>Price | <%= @spaceship.price %></h2>
-  <h2>description | <%= @spaceship.description %></h2>
-  <h2>Speed | <%= @spaceship.speed %></h2>
-  <h2>weaponry | <%= @spaceship.weaponry %></h2>
-  <h2>Owner | <%= @spaceship.user.first_name %><%= @spaceship.user.last_name %></h2>
 
-  <% if (@user == @spaceship.user) %>
-  <%= link_to "Edit Spaceship", edit_spaceship_path(@spaceship) %> |
-  <% end %>
-  <%= link_to "See my Spaceships", dashboard_path(@spaceship) %>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Address:</p>
+      <p><%= @spaceship.address %></p>
+      <p>Price: <%= @spaceship.price %> $</p>
+      <p>Description: <%= @spaceship.description %></p>
+      <p>Speed: <%= @spaceship.speed %></p>
+      <p>weaponry: <%= @spaceship.weaponry %></p>
+      <p>Owner: <%= @spaceship.user.first_name %> <%= @spaceship.user.last_name %></p>
+      <div>
+
+        <% if (@user == @spaceship.user) %>
+        <%= link_to "Edit Spaceship", edit_spaceship_path(@spaceship) %> |
+        <% end %>
+        <%= link_to "See my Spaceships", dashboard_path(@spaceship), class: "btn btn-primary" %>
+      </div>
+      
+    </div>
+    <div class="col-sm-4">
+      <% @spaceship.photos.each do |photo| %>
+      <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+      <% end %>
+    </div>
+  </div>
+
+
 </div>
