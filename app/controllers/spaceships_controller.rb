@@ -2,12 +2,13 @@ class SpaceshipsController < ApplicationController
   def index
     @spaceships = Spaceship.all
 
-    @spaceships_gmaps = Spaceships.where.not(latitude: nil, longitude: nil)
+    @spaceships_gmaps = Spaceship.where.not(latitude: nil, longitude: nil)
 
     @hash = Gmaps4rails.build_markers(@spaceships_gmaps) do |spaceship, marker|
-      marker.lat flat.latitude
-      marker.lng flat.longitude
+      marker.lat spaceship.latitude
+      marker.lng spaceship.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end 
   end
 
   def show
@@ -58,6 +59,6 @@ class SpaceshipsController < ApplicationController
   private
 
   def spaceship_params
-    params.require(:spaceship).permit(:name, :address, :price, :description, :user_id, :speed, :weaponry)
+    params.require(:spaceship).permit(:name, :address, :price, :description, :user_id, :speed, :weaponry, :photos)
   end
 end

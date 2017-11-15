@@ -1,6 +1,10 @@
 <h1>Spaceships#show</h1>
 <p>Find me in app/views/spaceships/show.html.erb</p>
 
+
+<% @spaceship.photos.each do |photo| %>
+  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+<% end %>
 <h2>Name | <%= @spaceship.name %></h2>
 <h2>Address | <%= @spaceship.address %></h2>
 <h2>Price | <%= @spaceship.price %></h2>
