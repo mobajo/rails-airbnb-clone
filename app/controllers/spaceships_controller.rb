@@ -4,17 +4,18 @@ class SpaceshipsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @spaceship = Spaceship.find(params[:id])
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @spaceship = Spaceship.new
   end
 
   def create
     @spaceship = Spaceship.new(spaceship_params)
-    @spaceship.user = User.find(params[:user_id])
+    @spaceship.user = current_user
     if @spaceship.save
       redirect_to spaceship_path(@spaceship)
     else
@@ -23,7 +24,7 @@ class SpaceshipsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
+    @user = current_user
     @spaceship = Spaceship.find(params[:id])
   end
 
@@ -39,8 +40,13 @@ class SpaceshipsController < ApplicationController
   def destroy
     @spaceship = Spaceship.find(params[:id])
     @spaceship.destroy
-    redirect_to user_spaceships_path(@spaceship)
+    redirect_to dashboard_path(@spaceship)
   end
+
+  def dashboard
+    @spaceships = current_user.spaceships
+  end
+
 
   private
 

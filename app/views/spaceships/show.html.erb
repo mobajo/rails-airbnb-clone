@@ -10,6 +10,7 @@
 <h2>Owner | <%= @spaceship.user.first_name %><%= @spaceship.user.last_name %></h2>
 
 
-
+<% if (@user == @spaceship.user) %>
 <%= link_to "Edit Spaceship", edit_spaceship_path(@spaceship) %> |
-<%= link_to "See my Spaceships", user_spaceships_path(@spaceship) %>
+<% end %>
+<%= link_to "See my Spaceships", dashboard_path(@spaceship) %>
