@@ -2,11 +2,13 @@
   background: $brand-primary;
   padding: 0px;
   margin-bottom: 0px;
+  height: 75px;
+  padding: 20px 20px; 
+  margin-top: 0px;
 }
 .footer a {
   font-size: 25px;
-  color: $brand-info ;
-
+  color: $brand-info;
 }
 .footer a:hover {
   opacity: 0.5;
