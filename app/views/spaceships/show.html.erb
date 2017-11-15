@@ -16,11 +16,7 @@
       <h4>Owner:</h4> 
       <%= @spaceship.user.first_name %> <%= @spaceship.user.last_name %></p>
 
-        <% if (@user == @spaceship.user) %>
-        <%= link_to "Edit Spaceship", edit_spaceship_path(@spaceship) %> |
-        <% end %>
-       <!-- <%= link_to "See my Spaceships", dashboard_path(@spaceship), class: "btn btn-primary" %>
-      </div> -->
+      </div>
       
     </div>
     <div class="col-sm-4">
