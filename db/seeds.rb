@@ -112,7 +112,7 @@ spaceship1 = Spaceship.new(
   name: "Death Star",
   address: "Ahornsgade, Copenhagen",
   price: 1000,
-  description: "This is the station wagon of spaceships. Plenty of room for the entire family, but have in mind that it can be vulnerable to intruders.",
+  description: "This is the station car of spaceships. Plenty of room for the entire family, but have in mind that it can be vulnerable to intruders.",
   speed: "Static",
   weaponry: "Superlaser/Ultimate Weapon"
   )
@@ -158,7 +158,7 @@ urls = [
 spaceship4 = Spaceship.new(
   user: User.order("RANDOM()").first,
   name: "Space Station V",
-  address: "Hollywood, California, USA",
+  address: "Gedser, Falster",
   price: 700,
   description: "This is the spaceship for the interior design minded traveller. If you care more about going round in circles and sitting comfortably with a great view of Planet Earth",
   speed: "0 km/h",
@@ -174,7 +174,7 @@ urls = [
 spaceship5 = Spaceship.new(
   user: User.order("RANDOM()").first,
   name: "Apollo Saturn V",
-  address: "Titusville, FL 32899",
+  address: "Rønne, Bornholm",
   price: 400,
   description: "This is tried and tested favorite will get the job done on time. For when you want to get there and secure the best spot for your outer-space picnic before your rival gets there first.",
   speed: "2 755.55456 m/s",
