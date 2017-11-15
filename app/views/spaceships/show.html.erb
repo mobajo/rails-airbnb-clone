@@ -1,20 +1,17 @@
-<h1>Spaceships#show</h1>
-<p>Find me in app/views/spaceships/show.html.erb</p>
+<div class="container">
+  <h1><%= @spaceship.name %></h1>
+  <% @spaceship.photos.each do |photo| %>
+    <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+  <% end %>
+  <h2>Address | <%= @spaceship.address %></h2>
+  <h2>Price | <%= @spaceship.price %></h2>
+  <h2>description | <%= @spaceship.description %></h2>
+  <h2>Speed | <%= @spaceship.speed %></h2>
+  <h2>weaponry | <%= @spaceship.weaponry %></h2>
+  <h2>Owner | <%= @spaceship.user.first_name %><%= @spaceship.user.last_name %></h2>
 
-
-<% @spaceship.photos.each do |photo| %>
-  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-<% end %>
-<h2>Name | <%= @spaceship.name %></h2>
-<h2>Address | <%= @spaceship.address %></h2>
-<h2>Price | <%= @spaceship.price %></h2>
-<h2>description | <%= @spaceship.description %></h2>
-<h2>Speed | <%= @spaceship.speed %></h2>
-<h2>weaponry | <%= @spaceship.weaponry %></h2>
-<h2>Owner | <%= @spaceship.user.first_name %><%= @spaceship.user.last_name %></h2>
-
-
-<% if (@user == @spaceship.user) %>
-<%= link_to "Edit Spaceship", edit_spaceship_path(@spaceship) %> |
-<% end %>
-<%= link_to "See my Spaceships", dashboard_path(@spaceship) %>
+  <% if (@user == @spaceship.user) %>
+  <%= link_to "Edit Spaceship", edit_spaceship_path(@spaceship) %> |
+  <% end %>
+  <%= link_to "See my Spaceships", dashboard_path(@spaceship) %>
+</div>
