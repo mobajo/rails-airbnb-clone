@@ -7,6 +7,7 @@ class User < ApplicationRecord
   
   has_many :spaceships, dependent: :destroy
   has_many :bookings
+  has_attachment :photo
 
   ########## FB Login ###############
   def self.find_for_facebook_oauth(auth)
@@ -30,4 +31,8 @@ class User < ApplicationRecord
     return user
   end
   ########## / FB Login ##############
+
+  def product_params
+    params.require(:user).permit(:email, :first_name, :last_name, :photo)
+  end
 end
