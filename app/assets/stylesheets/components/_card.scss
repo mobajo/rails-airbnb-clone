@@ -1,0 +1,68 @@
+.card {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  border-radius: 1px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: $brand-info;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  padding: 0px;
+  position: relative;
+
+}
+
+
+
+
+.card-name {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+
+}
+
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h3{
+  font-size: 18px;
+}
+
+.card-description p{
+  font-size: 16px;
+}
+
+.card-description h3, p {
+  margin: 0px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.card-icons {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.card-icons :hover {
+  opacity: 0.5;
+}
+.card-user {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

@@ -1,0 +1,39 @@
+<div class="background">
+  <h1>Aerospace bnb</h1>
+
+
+
+  <div class="cards">
+    <div class="container">
+      <div class="row">
+        <% %w[bird-of-prey cyloneship starbug x-wing eagle5 heart-of-gold].each do |city|%>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(<%= image_path "#{city}.jpg" %>)">
+            <span class = "card-name"> <%= city.capitalize %> </span>
+            <div class = "card-description">
+              <h3>User's spaceship</h3>
+              <p>Some basic discription!</p>
+            </div>
+
+            <img class = "card-user avatar" <%= image_tag("rimmer.jpg", :alt => "rss feed") %> >
+
+            <ul class="list-inline card-icons">
+              <li>
+                <i class="fa fa-star"></i>
+              </li>
+              <li>
+                <i class="fa fa-heart"></i>
+              </li>
+              <li>
+                <i class="fa fa-share"></i>
+              </li>
+            </ul>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+

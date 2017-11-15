@@ -1,1 +1,11 @@
+.background {
+  background-color: $gray-base
+}
 // Specific CSS for your home-page
+h1 {
+  color: $brand-primary;
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
