@@ -1,22 +1,23 @@
-.banner {
+.main-container {
   color: white;
   text-align: center;
-  height: 100vh;
+  height: 90vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 0px;
+  width: 100%;
 }
-.banner h1 {
+.main-container h1 {
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   color: white;
 
 }
-.banner p {
+.main-container p {
   font-size: 25px;
   font-weight: lighter;
   color: white;
@@ -26,6 +27,9 @@
 
 .search-form {
   color: black;
+  height: 38px;
+  width: 330px;
+  font-family: "Rokkitt", sans-serif;
 }
 
 .main-search-field1 {
@@ -34,4 +38,28 @@
 
 .main-search-field2 {
   display: inline-block;
+}
+
+.video-container {
+position:absolute;
+height: 90vh;
+width: 100%;
+margin-bottom: 0px;
+}
+
+.video {
+position:absolute;
+z-index: -1;
+width: 100%;
+margin: none;
+padding: none;
+}
+
+.banner-content {
+  margin-top: 150px;
+  text-align: center;
+}
+
+#background {
+  width: 100%;
 }
