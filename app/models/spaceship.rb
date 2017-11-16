@@ -11,7 +11,4 @@ class Spaceship < ApplicationRecord
   # validates :address, presence: true
   # validates :price, presence: true, numericality: { only_integer: true }
   # validates :description, presence: true
-  def spaceship_params
-    params.require(:spaceship).permit(:name, :address, :price, :description, :speed, :weaponry, photos: [])
-  end
 end
