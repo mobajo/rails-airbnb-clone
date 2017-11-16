@@ -10,10 +10,11 @@ class SpaceshipsController < ApplicationController
     end
   end
 
-  def show
-    @user = current_user
-    @spaceship = Spaceship.find(params[:id])
-  end
+    def show
+      @user = current_user
+      @spaceship = Spaceship.find(params[:id])
+      @booking = Booking.new
+    end
 
   def new
     @user = current_user
