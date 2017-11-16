@@ -1,38 +1,80 @@
-<div class="container">
-  <h1><%= @spaceship.name %></h1>
-
+<div class="container outer-container">
   <div class="row">
-    <div class="col-xs-4">
-      <h4>Info</h4>
-      <p><strong>Address:</strong> <%= @spaceship.address %></p>
-      <p><strong>Description:</strong></p>
-      <p><strong>Speed:</strong> <%= @spaceship.speed %></p>
-      <p><strong>Weaponry: </strong><%= @spaceship.weaponry %></p>
-      <h4>Description</h4>
-      <p><%= @spaceship.description %></p>
-      <p><strong>Price:</strong> <%= @spaceship.price %> $</p>
-
-      <div>
-        <h4>Owner:</h4> 
-        <%= @spaceship.user.first_name %> <%= @spaceship.user.last_name %></p>
-
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10">
+      <div class="info-box">
+        <h2><%= @spaceship.name %></h2>
       </div>
-      
-    </div>
-    <div class="col-xs-4">
-      <% @spaceship.photos.each do |photo| %>
-      <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-      <% end %>
-    </div>
-    <div class="col-xs-4">
-      <h4>Booking</h4>
-      <%= simple_form_for [@spaceship, @booking] do |f| %>
-      <%= f.input :start_date , input_html: { value: `<%= Date.today %\>` } %> 
-      <%= f.input :end_date, input_html: { value: `<%= Date.today + 5 %\>` } %>
-      <%= f.submit "Request booking", class: "btn btn-info" %>
-      <% end %>
-      <p><%= @booking.errors.full_messages.first if @booking.errors.any? %></p>
+      <div>
+        <%= cl_image_tag(@spaceship.photos.second.path,
+        width: 1500, crop: :mfit, class: "img-responsive") %>
+        <!-- <div class="caption img-content">
+          <h1><%= @spaceship.name %></h1>
+        </div> -->
+      </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+      <div class="info-box-grey">
 
-</div>
+        <h4>
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+          Info
+        </h4>
+        <p>
+          <strong>
+          Address:</strong>
+          <%= @spaceship.address %></p>
+          <p>
+            <strong>
+            Weaponry: </strong>
+            <%= @spaceship.weaponry %>
+          </p>
+          <p>
+            <strong>Speed:</strong> 
+            <%= @spaceship.speed %> km/h
+          </p>
+        </div>
+        <div class="info-box">
+
+          <h4>
+            <i class="fa fa-align-left" aria-hidden="true"></i> Description</h4>
+            <p><%= @spaceship.description %></p>
+          </div>
+          <div class="info-box">
+            <h4><strong>Price:</strong> <%= @spaceship.price %> $/day</h4>
+          </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-5">
+          <div class="info-box">
+            <h4><i class="fa fa-calendar" aria-hidden="true"></i> Booking</h4>
+            <%= simple_form_for [@spaceship, @booking] do |f| %>
+            <%= f.input :start_date , class: "" %> 
+            <%= f.input :end_date, class: "" %>
+            <%= f.submit "Request booking", class: "btn btn-danger btn-block" %>
+            <% end %>
+          </div>
+          <div class="info-box-grey">
+            <div class="row">
+              <div class="col-xs-6">
+                <h4>Owner</h4> 
+                <p><%= @spaceship.user.first_name %> <%= @spaceship.user.last_name %></p>
+              </div>
+              <div class="col-xs-6 text-center">
+                <%= cl_image_tag @spaceship.user.photo.path, class: "avatar-large avatar-bordered text-right" %>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="info-box">
+            <h4>All photos</h4>
+            <% @spaceship.photos.each do |photo| %>
+            <%= cl_image_tag photo.path, width: 500, crop: :fill, class: "img-responsive" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
