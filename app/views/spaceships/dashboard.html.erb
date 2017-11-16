@@ -10,4 +10,11 @@
 	<% end %>
 </ul>
 
-<%= link_to "Create new Spaceship", new_spaceship_path %>
+<ul>
+	<% @bookings.each do |booking| %>
+	<li><%= link_to booking.start_date, booking_path(booking) %></li>
+	<% end %>
+</ul>
+
+
+<%= link_to "Create new Spaceship", new_spaceship_path, class: "btn btn-primary" %>

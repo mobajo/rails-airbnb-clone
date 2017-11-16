@@ -31,6 +31,10 @@ class BookingsController < ApplicationController
     redirect_to user_bookings_path(@booking)  
   end
 
+  def dashboard
+    @bookings = current_user.bookings
+  end
+
   private
 
   def booking_params
