@@ -13,6 +13,7 @@ class SpaceshipsController < ApplicationController
     def show
       @user = current_user
       @spaceship = Spaceship.find(params[:id])
+      @booking = Booking.new
     end
 
     def new
@@ -54,7 +55,7 @@ class SpaceshipsController < ApplicationController
       @spaceships = current_user.spaceships
     end
 
-    private
+  private
 
   def spaceship_params
     params.require(:spaceship).permit(:name, :address, :price, :description, :user_id, :speed, :weaponry, :photos)
