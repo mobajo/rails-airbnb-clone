@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  get "design"  ,to: 'pages#design'
+  get "/design"  ,to: 'pages#design'
+
+  post "/search", to: 'spaceships#search', as: 'spaceships_search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

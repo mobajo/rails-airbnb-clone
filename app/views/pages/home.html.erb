@@ -2,18 +2,21 @@
 	<div class="banner-content">
 		<h1>AerospaceBnb</h1>
 		<p>Find your next spaceship with warp speed!</p>
-		<div class="main-search-field1">
-			<form class="search-form">
-				<input type="text">
-			</form>
-		</div>
-		<div class="main-search-field2">
-			<%= link_to "Search", spaceships_path, class: "btn btn-primary" %>
-		</div>
-	<!--	<p class="text-center">
+
+
+
+    <form method="post" id= "form1" action="<%= spaceships_search_path %>">
+      <input class="search-form" name="search_term" type="text">
+      <input type='hidden'>
+      <button type="submit">Search</button>
+    </form>
+
+
+
+	  <p class="text-center">
 			<%= link_to "See all Spaceships for rent", spaceships_path, class: "btn btn-primary" %>
 			<%= link_to "Go to my Dashboard", dashboard_path, class: "btn btn-primary" %>
-		</p> -->
+		</p>
 	</div>
 </div>
 

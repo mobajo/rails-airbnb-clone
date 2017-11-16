@@ -1,5 +1,7 @@
 class SpaceshipsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:search]
   def index
+
     @spaceships = Spaceship.all
     @spaceships_gmaps = Spaceship.where.not(latitude: nil, longitude: nil)
 
@@ -54,9 +56,24 @@ class SpaceshipsController < ApplicationController
       @spaceships = current_user.spaceships
     end
 
-    private
+    def search
+      @spaceships = Spaceship.near(spaceship_search_params, 500)
+
+      @hash = Gmaps4rails.build_markers(@spaceships) do |spaceship, marker|
+        marker.lat spaceship.latitude
+        marker.lng spaceship.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+      end
+      render :index
+    end
+
+  private
 
   def spaceship_params
     params.require(:spaceship).permit(:name, :address, :price, :description, :user_id, :speed, :weaponry, :photos)
+  end
+
+  def spaceship_search_params
+    params.require(:search_term)
   end
 end
