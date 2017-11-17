@@ -1,44 +1,62 @@
 <h1>Dashboard</h1>
 
+
 <div class="dashboard-container">
-	<div class="spaceship-container">
-		<h3>My Spaceships</h3>
-		<table class="spaceship-table">
-			<tr>
-				<th>Spaceship Name</th>
-				<th>Edit</th>
-				<th>Delete spaceship</th>
-			</tr>
-			<% @spaceships.each do |spaceship| %>
-			<tr>
-				<td><%= link_to spaceship.name, spaceship_path(spaceship) %></td>
-				<td><%= link_to "Edit Spaceship", edit_spaceship_path(spaceship) %></td>
-				<td><%= link_to spaceship_path(spaceship), method: :delete do %>
-					<i class="fa fa-trash-o" aria-hidden="true"></i></td>
-					<% end %>
-				</tr>
-				<% end %>
-			</table>
-		<%= link_to "Create new Spaceship", new_spaceship_path, class: "btn btn-primary" %>
-		</div>
 
 
-		<div class="booking-container">
-			<table class="booking-table">
-				<h3>My bookings</h3>
-				<tr>
-					<th>Spaceship Name</th>
-					<th>Start of booking</th>
-					<th>End of booking</th>
-				</tr>
 
-				<% @bookings.each do |booking| %>
-				<tr>
-					<td> <%= booking.spaceship.name %></td>  
-					<td><%= booking.start_date %></td>
-					<td><%= booking.end_date %></td>
-				</tr>
-				<% end %>
-			</table>
-		</div>
-	</div>
+  <% unless @spaceships.size == 0 %>
+  <div class="spaceship-container">
+    <h3>My Spaceships</h3>
+    <table class="spaceship-table">
+     <tr>
+      <th>Spaceship Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <% @spaceships.each do |spaceship| %>
+    <tr>
+      <td><%= link_to spaceship.name, spaceship_path(spaceship) %></td>
+      <td><%= link_to "Edit Spaceship", edit_spaceship_path(spaceship) %></td>
+      <td><%= link_to spaceship_path(spaceship), method: :delete do %>
+       <i class="fa fa-trash-o" aria-hidden="true"></i></td>
+       <% end %>
+     </tr>
+     <% end %>
+   </table>
+   <div>
+    <%= link_to "Create new Spaceship", new_spaceship_path, class: "btn btn-info" %>
+  </div>
+</div>
+
+<% end %>
+
+
+
+
+
+<div class="booking-container">
+ <table class="booking-table">
+  <h3>My bookings</h3>
+  <tr>
+   <th>Spaceship Name</th>
+   <th>Start of booking</th>
+   <th>End of booking</th>
+   <th>Total Price</th>
+ </tr>
+
+ <% @bookings.each do |booking| %>
+ <tr>
+   <td> <%= booking.spaceship.name %></td>
+   <td><%= booking.start_date %></td>
+   <td><%= booking.end_date %></td>
+   <td>$<%= booking.total_price %> </td>
+
+ </tr>
+ <% end %>
+</table>
+ <div>
+    <%= link_to "Book a spaceship", spaceships_path, class: "btn btn-info" %>
+  </div>
+</div>
+</div>
