@@ -1,12 +1,15 @@
-<!-- <div class="banner" style="background-image: url(<%= image_path 'banner2.jpg' %>);"> -->
+<!-- <div class="banner" style="background-image: url( image_path banner2.jpg );#> -->
+
+
 <div class="main-container">
 	<div class="video-container">
 		<div class="video">
-			<%= video_tag(
+			
+<%= video_tag(
 				'space.mp4',
-				id: 'background',
+				id: 'video-background',
+				width: 1900,
 				autoplay: true,
-				logo: true,
 				muted: true,
 				loop: true,
 				)
@@ -14,18 +17,21 @@
 			</div>
 			<div class="banner-content">
 				<h1>AerospaceBnb</h1>
-				<p>Find your next spaceship with warp speed!</p>
+				<p>Find your next spaceship in warp speed!</p>
+				<div>
+					
+				</div>
 				<form method="post" id= "form1" action="<%= spaceships_search_path %>">
 					<input class="search-form" name="search_term" type="text">
 					<input type='hidden'>
 					<button type="submit" class="btn btn-info">Search</button>
 				</form>
 				<p class="text-center">
-					<%= link_to "See all Spaceships for rent", spaceships_path, class: "btn btn-primary" %>
+					<%= link_to "See all Spaceships for rent", spaceships_path, class: "btn btn-primary", id: "btn-all" %>
 				</p>
 			</div>
 		</div>
 	</div>
-<!-- </div>
+</div>
 
 
