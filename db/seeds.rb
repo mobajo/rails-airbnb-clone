@@ -120,8 +120,8 @@ spaceship1.save
 spaceship1.photo_urls = urls
 
 urls = [
-  'https://lumiere-a.akamaihd.net/v1/images/X-Wing-Fighter_47c7c342.jpeg?region=0\%\2C1\%\2C1536\%\2C864&width=768',
-  'https://vignette.wikia.nocookie.net/starwars/images/f/ff/X-wing_SWGTCG.jpg/revision/latest?cb=20090319165201'
+  'https://vignette.wikia.nocookie.net/starwars/images/f/ff/X-wing_SWGTCG.jpg/revision/latest?cb=20090319165201',
+  'https://lumiere-a.akamaihd.net/v1/images/X-Wing-Fighter_47c7c342.jpeg?region=0\%\2C1\%\2C1536\%\2C864&width=768'
 ]
 spaceship2 = Spaceship.new(
   user: User.order("RANDOM()").first,
