@@ -1,4 +1,33 @@
-<h1>New booking</h1>
-<p>Congratulations you have a new booking!</p>
+  <div class="outer-container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1 info-box">
+      <div class="alert alert-success">
+        <h2>
+          <i class="fa fa-check" aria-hidden="true"></i>
+          <strong>Congratulations</strong>, <%= @booking.user.first_name %>
+        </h2>
+        <h4>You have a new booking!</h4>
+      </div>
+        <div class="col-xs-6">
+          <h4>Booking details</h4>
+          <p><strong>Where:</strong> <%= @booking.spaceship.name %></p>
+          <p><strong>When:</strong> From <%= @booking.start_date %> to <%= @booking.end_date %></p>
+          <p><strong>Owner:</strong> <%= @booking.spaceship.user.first_name %> <%= @booking.spaceship.user.last_name %></p>
+          <p><strong>Total price:</strong> <%= @booking.total_price %> $</p>
+        </div>
+        <div class="col-xs-6">
+          <br>
+          <%= cl_image_tag(@spaceship.photos.second.path,
+          width: 500, crop: :mfit, class: "img-responsive") %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <div class="info-box">
+          <h4>What to do next?</h4>
+          <%= link_to "Book another spaceship!", spaceships_path, class: "btn btn-danger btn-block" %>
+          <%= link_to "Go to your dashboard", dashboard_path, class: "btn btn-warning btn-block" %>
 
-<%= link_to "See all my Bookings", dashboard_path %>
+        </div>
+      </div>
+    </div>
+  </div>

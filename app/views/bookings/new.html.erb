@@ -1,2 +1,37 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="outer-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+      <div class="alert alert-success">
+        <h2>
+          <i class="fa fa-check" aria-hidden="true"></i>
+          <strong>Congratulations!</strong>, <%= current_user %>
+        </h2>
+        <h4>You have a new booking!</h4>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-7 col-sm-offset-1">
+      <div class="info-box">
+        <h4>Booking details</h4>
+        <p>Where: <%= @booking.spaceship.name %></p>
+        <p>When: <%= @booking.start_date %> to <%= @booking.end_date %></p>
+        <p>Who: <%= @booking.user.name %></p>
+        <p>Total price: <%= @booking.total_price %></p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="info-box">
+        <h4>What do you want to do next?</h4>
+        <%= link_to "See all your bookings", dashboard_path, class: "btn btn-warning btn-block" %>
+        <%= link_to "See all your bookings", dashboard_path, class: "btn btn-warning btn-block" %>
+      </div>
+      <div class="info-box">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
