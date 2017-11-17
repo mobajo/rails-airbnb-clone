@@ -21,7 +21,7 @@
   font-size: 25px;
   font-weight: lighter;
   color: white;
-  opacity: 0.6;
+  opacity: 0.7;
   margin-bottom: 30px;
 }
 
@@ -30,6 +30,11 @@
   height: 38px;
   width: 330px;
   font-family: "Rokkitt", sans-serif;
+  margin-bottom: 10px;
+}
+
+.search-form .btn .btn-info {
+  margin-bottom: 100px;
 }
 
 .main-search-field1 {
@@ -56,10 +61,23 @@ padding: none;
 }
 
 .banner-content {
-  margin-top: 150px;
+  margin-top: 5em;
   text-align: center;
 }
 
-#background {
-  width: 100%;
+#video-background {
+/*  making the video fullscreen  */
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+#btn-all {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
