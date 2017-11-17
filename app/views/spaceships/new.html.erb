@@ -1,11 +1,18 @@
 
-<%= simple_form_for [@spaceship] do |f| %>
-<%= f.input :name %>
-<%= f.input :address %>
-<%= f.input :price %>
-<%= f.input :description %>
-<%= f.input :speed %>
-<%= f.input :weaponry %>
-<%= f.input :photos, as: :attachinary %>
-<%= f.button :submit %>
-<% end %>
+<div class="container">
+  <row>
+    <div class="col-xs-4 col-xs-offset-4">
+      <h2>Add Spaceship</h2>
+      <%= simple_form_for [@spaceship] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <%= f.input :speed %>
+      <%= f.input :weaponry %>
+      <%= f.input :photos, as: :attachinary %>
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </row>
+</div>

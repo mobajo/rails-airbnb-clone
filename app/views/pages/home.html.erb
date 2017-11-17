@@ -1,20 +1,31 @@
-<div class="banner" style="background-image: url(<%= image_path 'banner2.jpg' %>);">
-	<div class="banner-content">
-		<h1>AerospaceBnb</h1>
-		<p>Find your next spaceship with warp speed!</p>
-		<div class="main-search-field1">
-			<form class="search-form">
-				<input type="text">
-			</form>
+<!-- <div class="banner" style="background-image: url(<%= image_path 'banner2.jpg' %>);"> -->
+<div class="main-container">
+	<div class="video-container">
+		<div class="video">
+			<%= video_tag(
+				'space.mp4',
+				id: 'background',
+				autoplay: true,
+				logo: true,
+				muted: true,
+				loop: true,
+				)
+				%>
+			</div>
+			<div class="banner-content">
+				<h1>AerospaceBnb</h1>
+				<p>Find your next spaceship with warp speed!</p>
+				<form method="post" id= "form1" action="<%= spaceships_search_path %>">
+					<input class="search-form" name="search_term" type="text">
+					<input type='hidden'>
+					<button type="submit" class="btn btn-info">Search</button>
+				</form>
+				<p class="text-center">
+					<%= link_to "See all Spaceships for rent", spaceships_path, class: "btn btn-primary" %>
+				</p>
+			</div>
 		</div>
-		<div class="main-search-field2">
-			<%= link_to "Search", spaceships_path, class: "btn btn-primary" %>
-		</div>
-	<!--	<p class="text-center">
-			<%= link_to "See all Spaceships for rent", spaceships_path, class: "btn btn-primary" %>
-			<%= link_to "Go to my Dashboard", dashboard_path, class: "btn btn-primary" %>
-		</p> -->
 	</div>
-</div>
+<!-- </div>
 
 
