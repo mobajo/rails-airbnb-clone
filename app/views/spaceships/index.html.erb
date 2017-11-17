@@ -17,7 +17,7 @@
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_path spaceship.photos.first.path %>');">
         <div class="card-description">
           <h2><%= spaceship.name %></h2>
-          <p><%= spaceship.description %></p>
+          <h3>Only £<%= spaceship.price %>/day</h3>
         </div>
 
         <%= cl_image_tag spaceship.user.photo.path, class: "card-user avatar" %>
