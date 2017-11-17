@@ -1,4 +1,7 @@
-<h1>My Spaceships</h1>
+<h1>Dashboard</h1>
+
+<div class="dashboard-container">
+<h3>My Spaceships</h3>
 <ul>
 	<% @spaceships.each do |spaceship| %>
 	<li><%= link_to spaceship.name, spaceship_path(spaceship) %> |
@@ -10,4 +13,17 @@
 	<% end %>
 </ul>
 
-<%= link_to "Create new Spaceship", new_spaceship_path %>
+<%= link_to "Create new Spaceship", new_spaceship_path, class: "btn btn-primary" %>
+
+
+<h3>My bookings</h3>
+<ul>
+	<% @bookings.each do |booking| %>
+	<li><%= booking.spaceship.name %> | <%= booking.start_date %> | <%= booking.end_date %></li>
+	<% end %>
+</ul>
+
+
+
+
+</div>
