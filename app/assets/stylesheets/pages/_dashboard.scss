@@ -1,17 +1,30 @@
 .dashboard-container {
-	margin-left: 150px;
-	display: flex;
+  margin-right: 50px;
+	margin-left: 50px;
+
+  display: flex;
+  justify-content: center;
+  color: $brand-primary;
 }
 
+.create_new_button {
+  margin: auto;
+}
 .spaceship-table {
 	margin-right: 50px;
 	background-color: white;
 	margin-bottom: 30px;
+  color: $brand-primary;
+  border-radius: 1px;
+  box-shadow: 1px 1px 1px lightgrey;
 }
 
 .booking-table {
 	margin-right: 50px;
 	background-color: white;
+  margin-bottom: 30px;
+  border-radius: 1px;
+  box-shadow: 1px 1px 1px lightgrey;
 }
 
 td {
