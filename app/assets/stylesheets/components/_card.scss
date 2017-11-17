@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   height: 180px;
-  border-radius: 1px;
+  border-radius: 8px;
   margin: 10px;
   display: flex;
   align-items: center;
@@ -11,10 +11,8 @@
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
   padding: 0px;
   position: relative;
-
+  box-shadow: 4px 4px 2px rgba(0,0,0,0.4);
 }
-
-
 
 
 .card-name {
