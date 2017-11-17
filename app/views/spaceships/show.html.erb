@@ -1,11 +1,12 @@
 <div class="container outer-container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10">
+      
       <div class="info-box-top">
         <h2>
           <%= @spaceship.name %>
-
         </h2>
+        <p><%= link_to "Home", root_path %> <i class="fa fa-long-arrow-right" aria-hidden="true"></i> <%= link_to "All spaceships", spaceships_path %> <i class="fa fa-long-arrow-right" aria-hidden="true"></i> <%= @spaceship.name %> </p>
       </div>
       <div>
         <%= cl_image_tag(@spaceship.photos.first.path,
@@ -26,7 +27,7 @@
               Owner</h4>
               <p><%= @spaceship.user.first_name %> <%= @spaceship.user.last_name %></p>
             </div>
-            <div class="col-xs-6 text-center">
+            <div class="col-xs-6 text-right">
               <%= cl_image_tag @spaceship.user.photo.path, class: "avatar-large avatar-bordered text-right" %>
             </div>
           </div>
@@ -76,8 +77,8 @@
                 <div class="info-box">
                   <h4><i class="fa fa-calendar" aria-hidden="true"></i> Booking</h4>
                   <%= simple_form_for [@spaceship, @booking] do |f| %>
-                  <%= f.input :start_date , class: "" %>
-                  <%= f.input :end_date, class: "" %>
+                  <%= f.input :start_date , class: "input-large" %>
+                  <%= f.input :end_date, class: "selectwidthauto" %>
                   <%= f.submit "Request booking", class: "btn btn-info btn-block" %>
                   <% end %>
                 </div>
