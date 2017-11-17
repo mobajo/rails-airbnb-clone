@@ -55,6 +55,7 @@ class SpaceshipsController < ApplicationController
 
   def dashboard
     @spaceships = current_user.spaceships
+    @bookings = current_user.bookings
   end
 
 
